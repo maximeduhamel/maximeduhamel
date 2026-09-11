@@ -1,0 +1,48 @@
+---
+const navLinks = [
+  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Kit", href: "/kit" },
+  { label: "Contact", href: "/contact" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky bg-[#121415]">
+  <div
+    class="flex justify-between mx-auto px-4 py-4 max-w-7xl font-bold text-sm uppercase"
+  >
+    <!-- LOGO -->
+    <a
+      href="/"
+      aria-current={currentPath === "/" ? "page" : undefined}
+      class="text-white hover:text-orange-700">Maxime Duhamel</a
+    >
+    <!-- DESKTOP NAVIGATION LIST -->
+    <nav id="desktop-nav" class="hidden sm:block">
+      <ul class="flex gap-4">
+        {
+          navLinks.map((link) => {
+            const isPathActive = currentPath === link.href;
+
+            return (
+              <li class="group relative">
+                <a
+                  href={link.href}
+                  aria-current={isPathActive ? "page" : undefined}
+                  class:list={[
+                    "group-hover:text-orange-700",
+                    isPathActive ? "text-orange-700" : "text-white",
+                  ]}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
