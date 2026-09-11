@@ -17,5 +17,9 @@
   "allowScripts": {
     "esbuild": true,
     "fsevents@2.3.3": true
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
   }
 }
