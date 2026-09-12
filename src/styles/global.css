@@ -1,1 +1,17 @@
 @import "tailwindcss";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/lora";
+
+@theme {
+  --color-primary: #FAFAFA;
+  --color-secondary: #2C2A29;
+  --color-accent: #FF5500;
+  --color-background: #1A1919;
+
+  --font-display: "Poppins", sans-serif;
+  --font-body: "Lora", serif;
+}
+
+*:focus-visible {
+  outline: 2px solid #FF5500;
+}
