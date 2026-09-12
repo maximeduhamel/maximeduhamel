@@ -9,17 +9,19 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky bg-[#121415]">
+<header
+  class="top-0 z-10 fixed bg-background/50 border border-secondary w-full"
+>
   <div
-    class="flex justify-between mx-auto px-4 py-4 max-w-7xl font-bold text-sm uppercase"
+    class="flex justify-between content-center mx-auto px-4 py-4 max-w-7xl h-14 font-display text-md uppercase tracking-wide"
   >
     <!-- LOGO -->
     <a
       href="/"
       aria-current={currentPath === "/" ? "page" : undefined}
-      class="text-white hover:text-orange-700">Maxime Duhamel</a
+      class="text-primary hover:text-accent">Maxime Duhamel</a
     >
-    <!-- DESKTOP NAVIGATION LIST -->
+    <!-- DESKTOP NAVIGATION -->
     <nav id="desktop-nav" class="hidden sm:block">
       <ul class="flex gap-4">
         {
@@ -32,8 +34,8 @@ const currentPath = Astro.url.pathname;
                   href={link.href}
                   aria-current={isPathActive ? "page" : undefined}
                   class:list={[
-                    "group-hover:text-orange-700",
-                    isPathActive ? "text-orange-700" : "text-white",
+                    "group-hover:text-accent",
+                    isPathActive ? "text-accent" : "text-primary",
                   ]}
                 >
                   {link.label}
